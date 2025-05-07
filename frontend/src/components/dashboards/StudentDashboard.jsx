@@ -4,7 +4,6 @@ import axios from "axios";
 import { AuthContext } from "../../contexts/AuthContext";
 import "../../styles/Profile.css";
 import Header from "../shared/Header";
-import PublicHeader from "../shared/PublicHeader";
 import StudentProfile from "../profile/StudentProfile";
 import {
   FaBook,
@@ -29,6 +28,8 @@ import {
   FaSignOutAlt,
   FaBell,
   FaEnvelope,
+  FaCheckCircle,
+  FaClock,
 } from "react-icons/fa";
 
 const API_BASE_URL = "http://localhost:5555/api";
@@ -292,14 +293,21 @@ const StudentDashboard = () => {
 
       const quizResponses = await Promise.all(quizPromises);
 
-      // Combine all quiz results
+      // Combine all quiz results with exam information
       let allQuizzes = [];
       quizResponses.forEach((response, index) => {
-        const quizzesWithExamId = response.data.map((quiz) => ({
+        const examId = examsList[index]._id || examsList[index].id;
+        const examTitle = examsList[index].title;
+        const examCourse = examsList[index].course;
+
+        const quizzesWithExamInfo = response.data.map((quiz) => ({
           ...quiz,
-          examId: examsList[index]._id || examsList[index].id,
+          examId: examId,
+          examTitle: examTitle,
+          examCourse: examCourse,
         }));
-        allQuizzes = [...allQuizzes, ...quizzesWithExamId];
+
+        allQuizzes = [...allQuizzes, ...quizzesWithExamInfo];
       });
 
       quizzes.setData(allQuizzes);
@@ -840,7 +848,7 @@ const StudentDashboard = () => {
     if (!exams.data || exams.data.length === 0) {
       return (
         <div className="empty-state">
-          <p>No exams are currently available.</p>
+          <p>No exams are currently available for your courses.</p>
         </div>
       );
     }
@@ -863,10 +871,10 @@ const StudentDashboard = () => {
                 <span className="exam-course">{exam.course}</span>
                 <div className="exam-info">
                   <span className="exam-date">
-                    <i className="icon-calendar"></i> {exam.examDate}
+                    <FaCalendarAlt className="icon-left" /> {exam.examDate}
                   </span>
                   <span className="exam-time">
-                    <i className="icon-clock"></i> {exam.startTime} -{" "}
+                    <FaClock className="icon-left" /> {exam.startTime} -{" "}
                     {exam.endTime}
                   </span>
                 </div>
@@ -885,7 +893,7 @@ const StudentDashboard = () => {
                         <div className="quiz-info">
                           <span className="quiz-title">{quiz.title}</span>
                           <span className="quiz-duration">
-                            <i className="icon-clock"></i> {quiz.timeLimit}{" "}
+                            <FaClock className="icon-left" /> {quiz.timeLimit}{" "}
                             minutes
                           </span>
                         </div>
@@ -1038,23 +1046,18 @@ const StudentDashboard = () => {
               <h3>My Exams</h3>
               {renderExams()}
             </div>
-          ) : (
-            <div className="dashboard-card">
-              <h3>Course Exams</h3>
-              <div className="dashboard-card exams-quizzes-section">
-                <div className="card-header-with-actions">
-                  <h3>My Exams & Quizzes</h3>
-                  <Link
-                    to="/dashboard/exam-timetable"
-                    className="view-all-link"
-                  >
-                    View All Exams
-                  </Link>
-                </div>
-                {renderExamsAndQuizzes()}
-              </div>
+          ) : null}
+
+          {/* New Exams and Quizzes Section - Always show this section */}
+          <div className="dashboard-card exams-quizzes-section">
+            <div className="card-header-with-actions">
+              <h3>My Exams & Quizzes</h3>
+              <Link to="/dashboard/exam-timetable" className="view-all-link">
+                View All Exams
+              </Link>
             </div>
-          )}
+            {renderExamsAndQuizzes()}
+          </div>
         </>
       )}
 
