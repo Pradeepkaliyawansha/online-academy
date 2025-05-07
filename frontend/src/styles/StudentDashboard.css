@@ -1,0 +1,600 @@
+/* frontend/src/styles/StudentDashboard.css */
+
+/* Enhanced Dashboard Stats */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: #3b82f6;
+  width: 60px;
+  height: 60px;
+  background-color: #e0e7ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.stat-details {
+  flex: 1;
+}
+
+.stat-details h3 {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin: 0 0 5px 0;
+}
+
+.stat-details p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+  background: linear-gradient(to right, #4f46e5, #3b82f6);
+  color: white;
+  border-radius: 8px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-banner h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+}
+
+.welcome-banner p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.dashboard-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card.full-width {
+  grid-column: 1 / -1; /* Span all columns */
+}
+
+.card-header-with-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-header-with-actions h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.2rem;
+}
+
+.view-all-link {
+  color: #3b82f6;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
+}
+
+/* Course Cards */
+.course-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.course-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9fafb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.course-link {
+  text-decoration: none;
+  color: #1f2937;
+}
+
+.course-link h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.course-link:hover h4 {
+  color: #3b82f6;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.status-badge.active {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.upcoming {
+  background-color: #fff7ed;
+  color: #9a3412;
+}
+
+.status-badge.completed {
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.course-details {
+  margin-bottom: 15px;
+}
+
+.course-details p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+}
+
+.icon-left {
+  margin-right: 8px;
+}
+
+.icon-right {
+  margin-left: 8px;
+}
+
+.btn-small {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-small:hover {
+  background-color: #2563eb;
+}
+
+.view-detail {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Exam List Styling */
+.exam-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.exam-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.exam-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exam-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.exam-course {
+  color: #4b5563;
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+}
+
+.exam-details {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.exam-date,
+.exam-time {
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+  font-size: 0.85rem;
+}
+
+.countdown-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #e0e7ff;
+  color: #4338ca;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.exam-quizzes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.quizzes-available {
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+  font-size: 0.85rem;
+}
+
+/* Enhanced Quiz Styling */
+.quizzes-by-exam {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.exam-quizzes-group {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.exam-group-header {
+  background: linear-gradient(to right, #4f46e5, #6366f1);
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.exam-group-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.exam-group-header .exam-date {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  background-color: #f3f4f6;
+  border-radius: 0 0 8px 8px;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+}
+
+.quiz-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quiz-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.quiz-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.completion-badge {
+  display: flex;
+  align-items: center;
+  background-color: #dcfce7;
+  color: #166534;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.quiz-description {
+  color: #4b5563;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.quiz-metadata {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.quiz-info-item {
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+  font-size: 0.85rem;
+}
+
+.quiz-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.quiz-score {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.start-quiz {
+  background-color: #4338ca;
+}
+
+.start-quiz:hover {
+  background-color: #3730a3;
+}
+
+.continue-quiz {
+  background-color: #ca8a04;
+}
+
+.continue-quiz:hover {
+  background-color: #a16207;
+}
+
+.view-results {
+  background-color: #2563eb;
+}
+
+.view-results:hover {
+  background-color: #1d4ed8;
+}
+
+/* Loading and Error States */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #6b7280;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.empty-state p {
+  margin-bottom: 15px;
+}
+
+.btn-secondary {
+  padding: 8px 16px;
+  background-color: #e5e7eb;
+  color: #374151;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exam-details,
+  .quiz-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Add these to your existing StudentDashboard.css file */
+
+.course-exams-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.course-exams-section h5 {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 8px 0;
+}
+
+.course-exam-item {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.exam-name {
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.exam-date {
+  color: #666;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.exam-quizzes {
+  padding-left: 8px;
+  margin-top: 6px;
+  border-left: 2px solid #e0e0e0;
+}
+
+.exam-quiz-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  padding: 4px 0;
+}
+
+.quiz-title {
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.btn-mini {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: the 4px;
+  text-decoration: none;
+}
+
+.btn-mini.start-quiz {
+  background-color: #27ae60;
+}
+
+.btn-mini.start-quiz:hover {
+  background-color: #219653;
+}
